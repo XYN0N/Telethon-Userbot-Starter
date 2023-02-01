@@ -6,4 +6,4 @@ Simple Telethon Userbot Client
 * sudo pip3 install telethon
 * sudo pip3 install asyncio 
 
-Terminal: python3 start.py, put the code you recieve and enjoy.
+Terminal: python3 start.py, put the code you receive and enjoy.
