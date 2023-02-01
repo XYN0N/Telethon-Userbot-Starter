@@ -2,7 +2,7 @@
 Simple Telethon Userbot Client 
 
 
-# try with sudo, if dont work try witout
+# Install
 * sudo pip3 install telethon
 * sudo pip3 install asyncio 
 
