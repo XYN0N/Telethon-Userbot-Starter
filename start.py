@@ -1,20 +1,15 @@
-import asyncio
 import telethon
-async def main():
-    api_id =  # API ID
-    api_hash = 'API HASH'
-    phone_number = 'Your Telephone number'
 
-    client = telethon.TelegramClient('session_name', api_id, api_hash)
-    await client.start(phone=phone_number)
+# replace with your own API ID and HASH
+api_id = apid  # from https://my.telegram.org/
+api_hash =  'apihash'  #from https://my.telegram.org/
 
-    me = await client.get_me()
-    print('Sessione avviata come utente', me.first_name)
+client = telethon.TelegramClient('session_name', api_id, api_hash)
 
-    try:
-        while True:
-            await asyncio.sleep(1)
-    except KeyboardInterrupt:
-        print('Sessione terminata.')
+@client.on(telethon.events.NewMessage)
+async def handler(event):
+    if event.message.text and event.message.text.startswith("#ping"):
+        await event.respond("Pong!")
 
-asyncio.run(main())
+client.start()
+client.run_until_disconnected()
